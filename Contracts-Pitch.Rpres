@@ -1,0 +1,83 @@
+US Government Federal Contracts in FY14
+========================================================
+author: Chuck F
+date: 15 May 2015
+This was done for the Creating Data Products Course, by Johns Hopkins University at Coursera.org
+
+Why Federal Contracts
+========================================================
+
+Why not? Aren't you curious about how our (US) government is spending it's money?
+What I'd like to do:
+- Discover where money is being spent
+- Identify what types of organizations are winning contracts
+- Identify the size of the organizations using our money!
+
+Where's the Data?
+========================================================
+All this data is freely available!
+* http://download.usaspending.gov/datadownlods/Contracts/988f3e3b/Data_Feed.csv
+* Only - that's 405k contracts!
+  + Much too large for this project.
+  + I've randomly sampled it down to 5k
+
+How many employees are in these companies winning contracts?
+========================================================
+
+```{r, echo=FALSE}
+my_title <- paste("Contract Winners")
+fname <- "./data/sample_contracts.csv"
+
+df <- read.csv(fname, nrows=-1)
+keepers <- c("dollarsobligated",
+             "typeofcontractpricing",
+             "vendorname",
+             "state",
+             "placeofperformancecity",
+             "pop_state_code",
+             "numberofemployees",
+             "annualrevenue",
+             "womenownedflag",
+             "veteranownedflag",
+             "minorityownedbusinessflag",
+             "nonprofitorganizationflag"
+             )
+org_flags <- c("All",
+           "Minority Owned",
+           "Women Owned",
+           "Veteran Owned",
+           "Non-Profit Organization")
+
+
+####################################################################
+
+#data cleanup
+df <- subset(df, select=keepers)
+df$ks <- df$dollarsobligated / 1000 #dollarsobligated in Thousands
+df$state<-as.character(df$state)
+df <- df[df$dollarsobligated > 0, ] #gets out negative values
+df$veteranownedflag <- df$veteranownedflag == "Y"
+df$womenownedflag <- df$womenownedflag == "Y"
+df$minorityownedbusinessflag <- df$minorityownedbusinessflag == "Y"
+df$nonprofitorganizationflag <- df$nonprofitorganizationflag == "Y"
+df$all <- TRUE
+
+data<-df
+my_title <- paste("Contract Winners")
+
+g <- hist(data$numberofemployees/1000,col="red",
+          breaks = 15,
+          xlab = "Thousands of Employees",
+          ylab = "Number of Contracts",
+          xlim = c(1, 300),
+          main = "Num Employees vs Contracts Awarded")
+```
+What else would be nice to look at?
+========================================================
+I didn't have enough time/energy but...
+* I'd like to compare the Number of Employees versus Amount of Award
+* I'd like to know where the companies are located versus the Place of Performance
+
+Lastly
+========================================================
+Thanks for looking!
