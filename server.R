@@ -48,7 +48,7 @@ shinyServer(function(input, output) {
                        " Contract Winners", "</h4>")
         
         ####dollar data
-        str1 <- paste("<b>","Dollars Obligated for","</b>")
+        str1 <- paste("<b>","Dollars Obligated","</b>")
         str2 <- paste("Mean: ",
                            summary(data$dollarsobligated)[4],
                            ", Median: ",

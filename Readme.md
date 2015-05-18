@@ -19,13 +19,7 @@ All this data is freely available!
   + I've randomly sampled it down to 5k
 
 ### Credits:
-Some places I went for inspiration (but not all inclusive):
+Some places I went for inspiration (but not all inclusive):  
 http://shiny.rstudio.com/articles/  
 http://shiny.rstudio.com/gallery/  
 http://shiny.rstudio.com/tutorial/lesson5/  
-
-  
-The data was taken from here:
-http://download.usaspending.gov/datadownlods/Contracts/988f3e3b/Data_Feed.csv
-
-However, it's over 400k lines - I did a random sample to bring it down to 20k    

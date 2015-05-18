@@ -1,0 +1,6 @@
+Title: US Federal Contracts Visualization
+Author: Chuck F
+
+Type: Shiny
+url: http://cvillehokie.shinyapps.io/contracts
+Description: Data from: # http://download.usaspending.gov/datadownlods/Contracts/988f3e3b/Data_Feed.csv

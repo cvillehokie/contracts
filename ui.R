@@ -17,8 +17,8 @@ shinyUI(fluidPage(
         mainPanel(
           tabsetPanel(
             tabPanel("Statistics", htmlOutput("textit")),
-            tabPanel("Places of Performance", plotOutput("main_plot")),
-            tabPanel("Num Employees", plotOutput("showemployees"))
+            tabPanel("Num Employees", plotOutput("showemployees")),
+            tabPanel("Places of Performance (This is Slow!)", plotOutput("main_plot"))
           )
 #             h4("Obligated Dollars"),
 #             h6("CONUS Map of the Place of Performance"),
