@@ -1,23 +1,31 @@
 
-### The Tweets
-This was a pull from http://twitter.com,using a #vegan as a search. All were 
-downloaded in a seperate script and written to a \"tweets.csv\" file 
+## Background
+This was done for the Creating Data Products Course, by Johns Hopkins University at Coursera.org
 
-### The Cloud:
-The interactive panel only works with the Word Cloud
-The subsequent word cloud only shows those terms related to the selected terms
+### Why Federal Contracts
 
-### The Credits:
+Why not? Aren't you curious about how our (US) government is spending it's money?
+What I'd like to do:
+- Discover where money is being spent
+- Identify what types of organizations are winning contracts
+- Identify the size of the organizations using our money!
+
+### Where's the Data?
+
+All this data is freely available!
+* http://download.usaspending.gov/datadownlods/Contracts/988f3e3b/Data_Feed.csv
+* Only - that's 405k contracts!
+  + Much too large for this project.
+  + I've randomly sampled it down to 5k
+
+### Credits:
 Some places I went for inspiration (but not all inclusive):
-http://shiny.rstudio.com/articles/tabsets.html  
-http://onertipaday.blogspot.com/2011/07/word-cloud-in-r.html  
-http://www.rdatamining.com/examples/text-mining  
-http://stackoverflow.com/questions/15506118/make-dataframe-of-top-n-frequent-terms-for-multiple-corpora-using-tm-package-in  
-http://davetang.org/muse/2013/04/06/using-the-r_twitter-package/  
+http://shiny.rstudio.com/articles/
+http://shiny.rstudio.com/gallery/
+http://shiny.rstudio.com/tutorial/lesson5/
 
   
-# http://download.usaspending.gov/datadownlods/Contracts/988f3e3b/Data_Feed.csv
+The data was taken from here:
+http://download.usaspending.gov/datadownlods/Contracts/988f3e3b/Data_Feed.csv
 
-setwd("./contracts")
-x <- read.csv("contracts.csv", nrows=50)
-    
+However, it's over 400k lines - I did a random sample to bring it down to 20k    
