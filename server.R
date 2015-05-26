@@ -78,8 +78,8 @@ shinyServer(function(input, output) {
                  main=my_title
         )
        
-       xfit <- seq(min(data$numberofemployees), 
-                   max(data$numberofemployees))
+       xfit <- seq(min(data$numberofemployees, na.rm = TRUE), 
+                   max(data$numberofemployees, na.rm = TRUE))
        yfit <- dnorm(xfit, 
                      mean=mean(data$numberofemployees), 
                      sd=sd(data$numberofemployees))
