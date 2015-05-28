@@ -16,6 +16,7 @@ shinyUI(fluidPage(
         # 
         mainPanel(
           tabsetPanel(
+            tabPanel("About", includeMarkdown("about.md")),
             tabPanel("Statistics", htmlOutput("textit")),
             tabPanel("Num Employees", plotOutput("showemployees")),
             tabPanel("Places of Performance (This is Slow!)", plotOutput("main_plot"))

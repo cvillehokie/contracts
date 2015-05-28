@@ -3,7 +3,7 @@
 #df <- read.csv("./data/contracts.csv", header=TRUE)
 #df2 <- sample_n(df, 5000)
 #write.csv(df2, file="./data/sample_contracts.csv")
-
+library(markdown)
 fname <- "./data/sample_contracts.csv"
 #fname <- "./data/contracts.csv"
 
